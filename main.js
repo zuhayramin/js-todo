@@ -138,9 +138,25 @@ function renderTasks(selectedList) {
 		 const label = taskElement.querySelector('label')
 		 label.htmlFor = task.id
 		 label.append(task.name)
+
+		 const updateButton = taskElement.querySelector('.update-button');
+		 updateButton.addEventListener('click', e => {
+		// Remove the task from the list
+		//updateTask(task.id, e);
+			const taskElement = e.target.parentElement;
+			const taskName = taskElement.querySelector('label').innerText;
+			const taskId = task.id
+			const selectedList = lists.find(list => list.id === selectedListId)
+			newTaskInput.value = taskName;
+			selectedList.tasks = selectedList.tasks.filter((task) => task.id !== taskId);
+			saveAndRender();
+		});
+
 		 tasksContainer.appendChild(taskElement)
+
+		//  ,
 	})
-}
+}  
 
 function renderList(){
 	lists.forEach(list => {

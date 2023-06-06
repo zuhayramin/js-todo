@@ -194,6 +194,18 @@ form {
     opacity: 0.1;
 }
 
+.update-button {
+    display: inline-block;
+    background-color: var(--clr-primary);
+    color: var(--clr-light);
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.5em 1em;
+    margin-left: auto; /* Align the update-button to the right side */
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
 .custom-checkbox {
     --size: 0.75em;
     display: inline-block;
@@ -249,3 +261,4 @@ form {
     bottom: -35px;
     color: var(--clr-light);
 }
+
